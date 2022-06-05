@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" type="text/css" href="./login.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script type="text/javascript" src="./index.js"></script>
+	<title>Login</title>
+</head>
+<body>
+	<div id="homerows">
+		<div id="banner">
+			<h1 id="art"><font id="t">T</font>he<strong>A<font id="rt">RT</font></strong>Ga<font id="ll">ll</font>er<font id="y">y</font></h1>
+		</div>
+		<div id="list">
+			<nav class="homelist">
+				<ul>
+					<li><a href="./index.html" id="here">Home</a></li>
+					<li><a href="./exhibition.html">Exhibition</a></li>
+					<li><a href="./nft.html" id="nft">NFTs</a></li>
+					<li><a href="./topcharts.htm">Top Charts</a></li>
+					<li><a href="./login.html" id="here">Login | Signup</a></li>
+					<li><a href="./aboutme.htm">About Me</a></li>
+					<!--lets bring the change here-->
+					<li class="profile">
+						<!--
+							If incase Dear madam wants to check the database connection, madam can comment out this php section are
+                        <?php
+                            if(isset($_SESSION['usersid'])){
+                                echo "<a href='./index.php'> Logged as " . $_SESSION['usersuid']. "</a>";
+                                echo "<a href='./database/includes/logout.inc.php'> Log Out </a>";
+                            }else{
+                                echo "<a href='./login.html'>Login | Signup</a>";
+                            }
+                        ?> -->
+                    </li>
+                    	<!-- need to remove this tag if above php is commented out" -->
+                </ul>
+			</nav>
+		</div>
+	</div>
+	<form action="./database/includes/login.inc.php" method="POST">
+		<div class="login-wrap">
+			<div class="login-html">
+				<h1 id="intro">Into The Art Gallery</h1>
+				<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
+				<input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+				<div class="login-form">
+					<div class="sign-in-htm" id="sign-in">
+						<div class="group">
+							<label for="uid" class="label">Username</label>
+							<input id="uid" name='uid' type="text" class="input">
+						</div>
+						<div class="group">
+							<label for="pwd" class="label">Password</label>
+							<input id="pwd" name='pwd' type="password" class="input" data-type="password">
+						</div>
+						<div class="group">
+							<input id="check" type="checkbox" class="check" checked>
+							<label for="check"><span class="icon"></span> Keep me Signed in</label>
+						</div>
+						<div class="group">
+							<input type="submit" name="submit" class="button" value="Sign In">
+						</div>
+						<div class="hr"></div>
+						<div class="foot-lnk">
+							<a href="#forgot">Forgot Password?</a>
+						</div>
+					</div>
+			</form>
+			<!--signup-->
+			<form action="./database/includes/signup.inc.php" method="POST" enctype="multipart/form-data">
+					<div class="sign-up-htm">
+						<div class="group">
+							<label for="uid" class="label">Username</label>
+							<input id="uid" name="uid" type="text" class="input" required>
+						</div>
+						<div class="group">
+							<label for="pwd" class="label">Password</label>
+							<input id="pwd" type="password" class="input" data-type="password"
+							autocomplete="off" name='pwd' required>
+						</div>
+						<div class="group">
+							<label for="pass" class="label">Repeat Password</label>
+							<input id="pass" name='pwdrepeat' type="password" class="input" data-type="password" required placeholder="Encryption Standard Used: SHA256 (Pick a strong password)" required>
+						</div>
+						<div class="group">
+							<label for="email" class="label">Email Address</label>
+							<input id="email" type="text" name='email' class="input" required>
+							<label for="ewallet" class="label">Meta Mask Wallet Address Or Don't have one? <a href="https://metamask.io/" style="color:blue;">CREATE HERE</a></label>
+							<input id="ewallet" type="text" name='ewallet' class="input" placeholder="Optional if you are not NFT holder">
+							<label for="dp" class="label">Upload A picture</label>
+							<input type="file" id="dp" name ="dp" multiple="multiple" accept="image/*">
+							<label for="cardno" class="label">Card Number</label>
+							<input id="cardno" type="text" name='cardno' class="input" required placeholder="Enter your VISA card number(International)">
+							<label for="postalcode" class="label">Postal Code</label>
+							<input id="postalcode" type="text" name='postalcode' class="input" required >
+							<label for="terms" class="label"><input type="checkbox" name="terms" id="terms" required value='accepted'>&nbsp;I agree to the <a href="" style="color:white; font-weight: bolder;">terms and condition</a></label>
+
+						</div>
+						<div class="group">
+							<input type="submit" name="submit" class="button" value="Sign Up" onclick="verifyPassword">
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
