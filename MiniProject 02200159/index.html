@@ -1,10 +1,7 @@
-<!--For user login Need to comment out this to run on server and rename the file to index.php
 <?php
-
-
 	session_start();
 	include_once './database/includes/dbh.inc.php'
-?>-->
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,19 +24,17 @@
 					<li><a href="./nft.html" id="nft">NFTs</a></li>
 					<li><a href="topcharts.htm">Top Charts</a></li>
 					<!-- to make it dynamic --->
-					<!-- need to remove this tag if above php is commented out" -->
+					<!-- need to remove this tag if above php is commented out" 
 					<li><a href="./login.html">Login | Signup</a></li>
-					<li><a href="aboutme.htm">About Me</a></li>
-					<!--lets bring the change here-->
+					lets bring the change here-->
+					<li><a href="aboutme.htm">About Me</a></li
 					<li class="profile">
-						<!--
-							If incase Dear madam wants to check the database connection, madam can comment out this php section are
-                        <?php
-                            if(isset($_SESSION['usersid'])){
-                                echo "<a href='./index.php'> Logged as " . $_SESSION['usersuid']. "</a>";
-                                echo "<a href='./database/includes/logout.inc.php'> Log Out </a>";
-                            }else{
-                                echo "<a href='./login.html'>Login | Signup</a>";
+                        		<?php
+                            			if(isset($_SESSION['usersid'])){
+                                		echo "<a href='./index.php'> Logged as " . $_SESSION['usersuid']. "</a>";
+                                		echo "<a href='./database/includes/logout.inc.php'> Log Out </a>";
+                            		}else{
+                                	echo "<a href='./login.html'>Login | Signup</a>";
                             }
                         ?> -->
                     </li>
